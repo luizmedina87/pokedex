@@ -9,3 +9,6 @@ dist/
 
 # Editor directories
 .vscode/
+
+# Log files
+repl.log
