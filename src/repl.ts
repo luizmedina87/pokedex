@@ -9,14 +9,14 @@ export function startREPL(state: State): void {
 
   rl.prompt();
 
-  rl.on("line", (line) => {
+  rl.on("line", async (line) => {
     const input = cleanInput(line);
     const commandName = input[0];
 
     if (input.length === 1 && commandName in state.commands) {
       const command = state.commands[commandName];
       try {
-        command.callback(state);
+        await command.callback(state); // update to return a promise
       } catch (error) {
         console.log(error);
       }
@@ -24,7 +24,7 @@ export function startREPL(state: State): void {
       rl.prompt();
     } else {
       console.log(
-        `Unknown command: "${input.join(" ")}". Type "help" for a list of commands.`
+        `Unknown command: "${input.join(" ")}". Type "help" for a list of commands.`,
       );
     }
 
