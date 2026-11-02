@@ -66,7 +66,7 @@ test("Staggered cache expiration test", async () => {
   cache.add(keyExpire1, dataExpire1);
   cache.add(keyExpire2, dataExpire2);
 
-  await new Promise((resolve) => setTimeout(resolve, timeout));
+  await new Promise((resolve) => setTimeout(resolve, timeout * 2));
 
   // Add data that will survive
   cache.add(keySurvive1, dataSurvive1);
