@@ -11,7 +11,7 @@ export class PokeAPI {
     pageURL = pageURL ?? PokeAPI.baseURL + PokeAPI.locationsPath;
 
     const cachedData = PokeAPI.cache.get(pageURL);
-    if (cachedData) return cachedData.val;
+    if (cachedData) return cachedData;
 
     const response = await fetch(pageURL);
     if (!response.ok) {

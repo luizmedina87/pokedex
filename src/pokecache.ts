@@ -18,8 +18,8 @@ export class Cache {
     this.#cache.set(key, {createdAt, val});
   }
 
-  get<T>(key: string) {
-    return this.#cache.get(key);
+  get(key: string) {
+    return this.#cache.get(key)?.val;
   }
 
   #reap() {

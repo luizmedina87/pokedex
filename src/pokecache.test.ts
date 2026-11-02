@@ -19,7 +19,7 @@ test.concurrent.each([
 
   cache.add(key, val);
   const cached = cache.get(key);
-  expect(cached?.val).toBe(val);
+  expect(cached).toBe(val);
 
   await new Promise((resolve) => setTimeout(resolve, interval * 2));
   const reaped = cache.get(key);
@@ -48,7 +48,7 @@ test.concurrent.each([
   
   cache.add(key, val);
   const cached = cache.get(key);
-  expect(cached?.val).toBe(val);
+  expect(cached).toBe(val);
 });
 
 
@@ -76,6 +76,6 @@ test("Staggered cache expiration test", async () => {
 
   expect(cache.get(keyExpire1)).toBe(undefined);
   expect(cache.get(keyExpire2)).toBe(undefined);
-  expect(cache.get(keySurvive1)?.val).toBe(dataSurvive1);
-  expect(cache.get(keySurvive2)?.val).toBe(dataSurvive2);
+  expect(cache.get(keySurvive1)).toBe(dataSurvive1);
+  expect(cache.get(keySurvive2)).toBe(dataSurvive2);
 });
