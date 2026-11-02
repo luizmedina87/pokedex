@@ -16,7 +16,7 @@ export function startREPL(state: State): void {
     if (input.length === 1 && commandName in state.commands) {
       const command = state.commands[commandName];
       try {
-        await command.callback(state); // update to return a promise
+        await command.callback(state);
       } catch (error) {
         console.log(error);
       }

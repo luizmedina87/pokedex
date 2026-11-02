@@ -42,11 +42,3 @@ export type ShallowLocations = {
 // export type Location = {
 //   // add properties here
 // };
-
-// Update your code PokeAPI class to use the cache.
-// If you already have the data for a given URL (we'll use the URLs as our cache keys) in the cache,
-// use that cached data instead of making a new request. Whenever you do make a request,
-// add the response to the cache.
-
-// Write at least 1 test for your cache package! The tip below should help you get started.
-// Vitest's test.concurrent.each() method may come in handy here.
