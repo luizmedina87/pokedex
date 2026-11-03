@@ -7,8 +7,9 @@ export async function commandCatch(
   const baseMessage = "Throwing a Pokeball at";
   const successMessage = "was caught!";
   const failureMessage = "escaped!";
-  if (!args) {
+  if (args.length === 0) {
     console.log(`${baseMessage} nothing... Pokeball was wasted...`);
+    return;
   }
 
   const pokemon = args[0];

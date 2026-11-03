@@ -4,7 +4,7 @@ export async function commandExplore(
   state: State,
   ...args: string[]
 ): Promise<void> {
-  if (!args) {
+  if (args.length === 0) {
     console.log("Please enter a location when using 'explore'");
     return;
   }
