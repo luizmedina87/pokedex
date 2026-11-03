@@ -29,6 +29,7 @@ export async function commandCatch(
     console.log(`${baseMessage} ${pokemonName}...`);
     if (catchPokemon(pokemonExperience)) {
       console.log(`${baseMessage} ${successMessage}`);
+      console.log("You may now inspect it with the inspect command.");
       state.pokedex.set(pokemonName, pokemonData);
     } else {
       console.log(`${baseMessage} ${failureMessage}`);
