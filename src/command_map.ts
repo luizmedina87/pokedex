@@ -1,6 +1,6 @@
 import { State } from "./state.js";
 
-export async function commandMap(state: State): Promise<void> {
+export async function commandMap(state: State, ...args: string[]): Promise<void> {
   if (state.nextLocationsURL === null) {
     console.log("You're on the last page");
     return;
